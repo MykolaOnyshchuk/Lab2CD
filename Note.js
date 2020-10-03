@@ -30,11 +30,11 @@ const pageLoad = () => {
             h3.textContent = arrOfObj[i].text;
             if (arrOfObj[i].title === "")
             {
-                h2.textContent = "No title"
+                h2.textContent = "Без теми"
             }
             if (arrOfObj[i].text === "")
             {
-                h3.textContent = "No text..."
+                h3.textContent = "Текст відсутній..."
             }
             newLI.id = "li" + arrOfObj[i].id;
             newLI.className = "liClass";
@@ -66,12 +66,12 @@ function createNewNote() {
     currentLI.append(h2);
     h2.id = "h2" + idd;
     h2.className = "h2Class";
-    h2.textContent = "Title";
+    h2.textContent = "Тема";
     let h3 = document.createElement("h3");
     currentLI.append(h3);
     h3.id = "h3" + idd;
     h3.className = "h3Class";
-    h3.textContent = "Note text...";
+    h3.textContent = "Текст нотатки...";
     currentLI.id = "li" + idd;
     currentid = currentLI.id;
     currentLI.className = "liClass";
@@ -111,11 +111,11 @@ const saveNote = () => {
         currentH3.textContent = noteField.value;
         if (title.value === "")
         {
-            currentH2.textContent = "No title"
+            currentH2.textContent = "Без теми"
         }
         if (noteField.value === "")
         {
-            currentH3.textContent = "No text..."
+            currentH3.textContent = "Текст відсутній..."
         }
         UL.prepend(currentLI);
         arrOfObj.push(arrOfObj.splice(ind,ind + 1)[0]);
