@@ -1,0 +1,85 @@
+
+
+a {
+    color: yellow;
+}
+
+.container-fluid{
+    /*background-color: floralwhite;*/
+    height: 100%;
+}
+
+.sideBar {
+    display: flex;
+    float: left;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    border: 1px solid paleturquoise;
+    background-color: mediumpurple;
+    padding: 10px;
+    margin: auto;
+}
+
+.sideBar_item {
+    cursor: pointer;
+    padding: 8px 10px;
+    font-size: 18px;
+    border: 1px solid gray;
+    margin: auto;
+    overflow: hidden;
+    color: snow;
+}
+
+.sideBar_item:hover{
+    background-color: rebeccapurple;
+    border-radius: 4px;
+}
+
+.form-group{
+    float: right;
+    width: 67%;
+}
+
+#noteField{
+    min-height: 635px;
+}
+
+#btn1 {
+    float: right;
+    background-color: gray;
+    size: letter;
+}
+
+/*#createBtn{
+    float: left;
+    width: 45%;
+}
+
+#deleteBtn{
+    float: right;
+    width: 45%;
+}*/
+
+.list-group {
+    color: snow;
+    cursor: pointer;
+    ;
+}
+.liClass:hover{
+    background-color: rebeccapurple;
+}
+
+.liClass{
+    list-style-type: none;
+}
+
+.h6Class{
+    text-align: right;
+}
+
+#ulBar{
+    margin-left: 0;
+    padding-left: 0;
+    overflow-scrolling: auto;
+}

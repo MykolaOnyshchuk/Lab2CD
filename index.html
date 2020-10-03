@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note</title>
+
+    <link rel="shortcut icon" href="Номер1.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        body {
+            background-color: rebeccapurple; /* Цвет фона */
+            color: snow; /* Цвет текста */
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <form class="container-fluid" id="container-fluid">
+        <h1>№tePlus</h1>
+        <!--<div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color: aqua">
+                <div class="d-flex flex-column">
+                    <div class="p-2">
+                        <div class="flex-heading">Head</div>
+                        <div class="flex-main">Body</div>
+                    </div>
+                    <div class="p-2">Flex элемент 2</div>
+                    <div class="p-2">Flex элемент 3</div>
+                </div>
+
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="background-color: yellow">Замітка</div>
+        </div>-->
+
+
+
+        <!--<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+            <h3 class="w3-bar-item">Menu</h3>
+            <a href="#" class="w3-bar-item w3-button">Link 1</a>
+            <a href="#" class="w3-bar-item w3-button">Link 2</a>
+            <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        </div>
+
+        <div style="margin-left:25%">
+
+            <div class="w3-container w3-teal">
+                <h1>My Page</h1>
+            </div>-->
+
+
+        <main>
+            <div class="sideBar" id="sideBar">
+                <button type="button" class="btn btn-success" id="createBtn">Створити нову нотатку</button>
+                <button type="button" class="btn btn-success" id="saveBtn">Зберегти  нотатку</button>
+                <button type="button" class="btn btn-danger" id="deleteBtn">Видалити нотатку</button>
+
+                <ul id="ulBar" class="list-group">
+                </ul>
+
+                <!--<div class="sideBar_section" id="sideBar_section">
+                    <div class="sideBar_item"><a href="#">
+                        <div class="sideBar_item-head">Моя страница</div>
+                        <div class="sideBar_item-body">Nick Onyshchuk</div>
+                    </a></div>
+                    <div class="sideBar_item"><a href="#">Друзья
+                        <button type="button" class="btn btn-warning" id="btn1">x</button>
+                    </a></div>
+                    <div class="sideBar_item"><a href="#">Ответы
+                    </a></div>
+                    <div class="sideBar_item"><a href="#">Группы
+                    </a></div>
+                    <div class="sideBar_item"><a href="#">Фото
+                    </a></div>
+                    <div class="sideBar_item"><a href="#">Музыка
+                    </a></div>
+                    <div class="sideBar_item"><a href="#">Игры
+                    </a></div>
+                    <div class="sideBar_item"><a href="#">Закладки
+                    </a></div>
+                </div>
+                <div class="sideBar_section">
+                    <div class="sideBar_item"><a href="#">Дни рождения
+                    </a></div>
+                    <div class="sideBar_item"><a href="#">Уведомления
+                    </a></div>
+                </div>-->
+
+            </div>
+
+            <form role="form">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="title" placeholder="Введіть тему">
+                    <input type="text" class="form-control" id="noteField" placeholder="Введіть свою нотатку">
+                </div>
+            </form>
+        </main>
+    </form>
+
+    <script src="Note.js"></script>
+
+</body>
+</html>
