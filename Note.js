@@ -41,6 +41,7 @@ const pageLoad = () => {
             UL.prepend(newLI);
         }
     }
+    hashManage();
 }
 
 const setDate = () => {
@@ -151,6 +152,26 @@ const idGen = (elemOfArr) =>{
     return Math.floor(Math.random() * 20000) + Math.floor(Math.random() * 20000);
 }
 
+const hashManage = () => {
+    if (location.hash === '') {
+        title.value = '';
+        noteField.value = '';
+        currentid = "";
+        currentLI = NULL;
+    }
+    else {
+        for (let i = 0; i < arrOfObj.length; i++) {
+            if (location.hash === '#' + arrOfObj[i].id) {
+                currentid = "li" + location.hash.slice(1);
+                currentLI = document.getElementById(currentid);
+                let ind = idSearch(currentid);
+                title.value = arrOfObj[ind].title;
+                noteField.value = arrOfObj[ind].text;
+                return;
+            }
+        }
+    }
+}
 
 function current(e){
     // e.target ссылается на кликнутый <li> элемент
@@ -182,25 +203,7 @@ UL.addEventListener('click', current, false);
 createButton.addEventListener("click", createNewNote);
 saveButton.addEventListener('click', saveNote);
 deleteButton.addEventListener('click', deleteNote)
-
-window.addEventListener('hashchange', () => {
-    for (let i = 0; i < arrOfObj.length; i++) {
-        if (location.hash === '#' + notesArray[i].id) {
-            currentid = "li" + location.hash.slice(1);
-            currentLI = document.getElementById(currentid);
-            let ind = idSearch(currentid);
-            title.value = arrOfObj[ind].title;
-            noteField.value = arrOfObj[ind].text;
-            return;
-        }
-    }
-    if (location.hash === '') {
-        title.value = '';
-        noteField.getElementById('note-text').value = '';
-        currentid = "";
-        currentLI = NULL;
-    }
-})
+window.addEventListener('hashchange', hashManage);
 
 //let LI = document.getElementById("liID");
 
