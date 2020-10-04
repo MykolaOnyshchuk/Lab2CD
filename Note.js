@@ -130,6 +130,7 @@ const deleteNote = () => {
     localStorage.setItem('NotePlus', JSON.stringify(arrOfObj));
     title.value = "";
     noteField.value = "";
+    location.hash = "";
 }
 
 const idSearch = (idOfLI) => {
@@ -181,6 +182,25 @@ UL.addEventListener('click', current, false);
 createButton.addEventListener("click", createNewNote);
 saveButton.addEventListener('click', saveNote);
 deleteButton.addEventListener('click', deleteNote)
+
+window.addEventListener('hashchange', () => {
+    for (let i = 0; i < arrOfObj.length; i++) {
+        if (location.hash === '#' + notesArray[i].id) {
+            currentid = "li" + location.hash.slice(1);
+            currentLI = document.getElementById(currentid);
+            let ind = idSearch(currentid);
+            title.value = arrOfObj[ind].title;
+            noteField.value = arrOfObj[ind].text;
+            return;
+        }
+    }
+    if (location.hash === '') {
+        title.value = '';
+        noteField.getElementById('note-text').value = '';
+        currentid = "";
+        currentLI = NULL;
+    }
+})
 
 //let LI = document.getElementById("liID");
 
