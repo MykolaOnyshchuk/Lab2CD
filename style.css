@@ -1,5 +1,3 @@
-
-
 a {
     color: yellow;
 }
@@ -43,6 +41,8 @@ a {
 
 #noteField{
     min-height: 635px;
+    float: right;
+    width: 100%;
 }
 
 #btn1 {
