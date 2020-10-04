@@ -55,8 +55,12 @@ function createNewNote() {
     let date = setDate();
     newObj(arrOfObj, idd, date, "", "");
     idArr.push(idd);
+    if (currentLI != null) {
+        currentLI.style.backgroundColor = "mediumpurple";
+    }
     currentLI = document.createElement("li");
     UL.append(currentLI);
+    currentLI.style.backgroundColor = "mediumblue"
     setURL(arrOfObj[arrOfObj.length - 1]);
     let h6 = document.createElement("h6");
     currentLI.append(h6);
@@ -157,11 +161,11 @@ const hashManage = () => {
         title.value = '';
         noteField.value = '';
         currentid = "";
-        currentLI = NULL;
+        currentLI = null;
     }
     else {
 
-        if (currentLI !== null) {
+        if (currentLI != null) {
             currentLI.style.backgroundColor = "mediumpurple";
         }
         for (let i = 0; i < arrOfObj.length; i++) {
