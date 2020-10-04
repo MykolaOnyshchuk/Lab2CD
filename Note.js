@@ -84,20 +84,6 @@ function createNewNote() {
     title.value = "";
     noteField.value = "";
     localStorage.setItem('NotePlus', JSON.stringify(arrOfObj));
-    /*document.addEventListener('click', function(event) {
-        var isClickInsideElement1 = title.contains(event.target);
-        if (!isClickInsideElement1) {
-            arrOfObj[arrOfObj.length - 1].title = title.textContent;
-            LI.innerHTML = "<h2>" + arrOfObj[arrOfObj.length - 1].title + "</h2>" + " <h2>" + arrOfObj[arrOfObj.length - 1].text + "</h2>";
-        }
-    });
-    document.addEventListener('click', function(event) {
-        var isClickInsideElement2 = title.contains(event.target);
-        if (!isClickInsideElement2) {
-            arrOfObj[arrOfObj.length - 1].text = noteField.textContent;
-            LI.innerHTML = "<h2>" + arrOfObj[arrOfObj.length - 1].title + "</h2>" + " <h2>" + arrOfObj[arrOfObj.length - 1].text + "</h2>";
-        }
-    });*/
 };
 
 const saveNote = () => {
@@ -183,8 +169,6 @@ const hashManage = () => {
 }
 
 function current(e){
-    // e.target ссылается на кликнутый <li> элемент
-    // Он отличается от e.currentTarget который будет ссылаться на родительский <ul> в этом контексте
     if (currentLI != null) {
         currentLI.style.backgroundColor = "mediumpurple";
     }
@@ -210,36 +194,8 @@ const UL = document.getElementById("ulBar");
 document.addEventListener("DOMContentLoaded", function() {
     pageLoad();
 });
-// Назначим обработчик к списку
-// Он будет вызван когда кликнут на любой <li>
 UL.addEventListener('click', current, false);
 createButton.addEventListener("click", createNewNote);
 saveButton.addEventListener('click', saveNote);
 deleteButton.addEventListener('click', deleteNote)
 window.addEventListener('hashchange', hashManage);
-
-//let LI = document.getElementById("liID");
-
-
-/*function getEventTarget(e) {
-    e = e || UL.event;
-    return e.target || e.srcElement;
-}
-
-UL.onclick = function(event) {
-    var target = getEventTarget(event);
-    target.style.backgroundColor =  '#f00';
-}*/
-
-
-
-/*UL.addEventListener('click', liClick);
-function liClick() {
-    noteField.value = $(this).index();
-}*/
-
-
-/*
-const newSideBarItem = document.createElement("sideBar_item");
-sideBar.append(newSideBarItem);
-newSideBarItem.innerText("earfavaeJHUHIUJOI");*/

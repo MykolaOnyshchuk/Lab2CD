@@ -1,9 +1,4 @@
-a {
-    color: yellow;
-}
-
 .container-fluid{
-    /*background-color: floralwhite;*/
     height: 100%;
 }
 
@@ -19,16 +14,6 @@ a {
     margin: auto;
 }
 
-.sideBar_item {
-    cursor: pointer;
-    padding: 8px 10px;
-    font-size: 18px;
-    border: 1px solid gray;
-    margin: auto;
-    overflow: hidden;
-    color: snow;
-}
-
 .sideBar_item:hover{
     background-color: rebeccapurple;
     border-radius: 4px;
@@ -36,7 +21,32 @@ a {
 
 .form-group{
     float: right;
-    width: 67%;
+    width: 68%;
+}
+
+.list-group {
+    color: snow;
+    cursor: pointer;
+}
+
+.liClass:hover{
+    background-color: rebeccapurple;
+}
+
+.liClass{
+    list-style-type: none;
+}
+
+.h6Class {
+    text-align: right;
+    color: yellow;
+}
+
+#ulBar{
+    margin-left: 0;
+    padding-left: 0;
+    height: 533px;
+    overflow: auto;
 }
 
 #noteField{
@@ -49,38 +59,4 @@ a {
     float: right;
     background-color: gray;
     size: letter;
-}
-
-/*#createBtn{
-    float: left;
-    width: 45%;
-}
-
-#deleteBtn{
-    float: right;
-    width: 45%;
-}*/
-
-.list-group {
-    color: snow;
-    cursor: pointer;
-;
-}
-.liClass:hover{
-    background-color: rebeccapurple;
-}
-
-.liClass{
-    list-style-type: none;
-}
-
-.h6Class{
-    text-align: right;
-}
-
-#ulBar{
-    margin-left: 0;
-    padding-left: 0;
-    height: 533px;
-    overflow: auto;
 }
