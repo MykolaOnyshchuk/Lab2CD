@@ -18,23 +18,23 @@ const pageLoad = () => {
             h6.id = "h6" + arrOfObj[i].id;
             h6.className = "h6Class";
             h6.textContent = arrOfObj[i].date;
-            let h2 = document.createElement("h2");
-            newLI.append(h2);
-            h2.id = "h2" + arrOfObj[i].id;
-            h2.className = "h2Class";
             let h3 = document.createElement("h3");
             newLI.append(h3);
             h3.id = "h3" + arrOfObj[i].id;
             h3.className = "h3Class";
-            h2.textContent = arrOfObj[i].title;
-            h3.textContent = arrOfObj[i].text;
+            let h4 = document.createElement("h4");
+            newLI.append(h4);
+            h4.id = "h4" + arrOfObj[i].id;
+            h4.className = "h4Class";
+            h3.textContent = arrOfObj[i].title;
+            h4.textContent = arrOfObj[i].text;
             if (arrOfObj[i].title === "")
             {
-                h2.textContent = "Без теми"
+                h3.textContent = "Без теми"
             }
             if (arrOfObj[i].text === "")
             {
-                h3.textContent = "Текст відсутній..."
+                h4.textContent = "Текст відсутній..."
             }
             newLI.id = "li" + arrOfObj[i].id;
             newLI.className = "liClass";
@@ -60,23 +60,23 @@ function createNewNote() {
     }
     currentLI = document.createElement("li");
     UL.append(currentLI);
-    currentLI.style.backgroundColor = "mediumblue"
+    currentLI.style.backgroundColor = "#306"
     setURL(arrOfObj[arrOfObj.length - 1]);
     let h6 = document.createElement("h6");
     currentLI.append(h6);
     h6.id = "h6" + idd;
     h6.className = "h6Class";
     h6.textContent = setDate();
-    let h2 = document.createElement("h2");
-    currentLI.append(h2);
-    h2.id = "h2" + idd;
-    h2.className = "h2Class";
-    h2.textContent = "Тема";
     let h3 = document.createElement("h3");
     currentLI.append(h3);
     h3.id = "h3" + idd;
     h3.className = "h3Class";
-    h3.textContent = "Текст нотатки...";
+    h3.textContent = "Тема";
+    let h4 = document.createElement("h4");
+    currentLI.append(h4);
+    h4.id = "h4" + idd;
+    h4.className = "h4Class";
+    h4.textContent = "Текст нотатки...";
     currentLI.id = "li" + idd;
     currentid = currentLI.id;
     currentLI.className = "liClass";
@@ -84,7 +84,6 @@ function createNewNote() {
     title.value = "";
     noteField.value = "";
     localStorage.setItem('NotePlus', JSON.stringify(arrOfObj));
-};
 
 const saveNote = () => {
     let ind = idSearch(currentid);
@@ -95,18 +94,18 @@ const saveNote = () => {
         arrOfObj[ind].title = title.value;
         arrOfObj[ind].text = noteField.value;
         let currentH6 = document.getElementById("h6" + currentid.slice(2));
-        let currentH2 = document.getElementById("h2" + currentid.slice(2));
         let currentH3 = document.getElementById("h3" + currentid.slice(2));
+        let currentH4 = document.getElementById("h4" + currentid.slice(2));
         currentH6.textContent = date;
-        currentH2.textContent = title.value;
-        currentH3.textContent = noteField.value;
+        currentH3.textContent = title.value;
+        currentH4.textContent = noteField.value;
         if (title.value === "")
         {
-            currentH2.textContent = "Без теми"
+            currentH3.textContent = "Без теми"
         }
         if (noteField.value === "")
         {
-            currentH3.textContent = "Текст відсутній..."
+            currentH4.textContent = "Текст відсутній..."
         }
         UL.prepend(currentLI);
         arrOfObj.push(arrOfObj.splice(ind,ind + 1)[0]);
@@ -158,7 +157,7 @@ const hashManage = () => {
             if (location.hash === '#' + arrOfObj[i].id) {
                 currentid = "li" + location.hash.slice(1);
                 currentLI = document.getElementById(currentid);
-                currentLI.style.backgroundColor = "mediumblue";
+                currentLI.style.backgroundColor = "#306";
                 let ind = idSearch(currentid);
                 title.value = arrOfObj[ind].title;
                 noteField.value = arrOfObj[ind].text;
@@ -174,7 +173,7 @@ function current(e){
     }
     currentid = "li" + e.target.id.slice(2);
     currentLI = document.getElementById(currentid);
-    currentLI.style.backgroundColor = "mediumblue";
+    currentLI.style.backgroundColor = "#306";
     let ind = idSearch(currentid);
     title.value = arrOfObj[ind].title;
     noteField.value = arrOfObj[ind].text;
@@ -193,7 +192,7 @@ const deleteButton = document.getElementById("deleteBtn")
 const UL = document.getElementById("ulBar");
 document.addEventListener("DOMContentLoaded", function() {
     pageLoad();
-});
+})
 UL.addEventListener('click', current, false);
 createButton.addEventListener("click", createNewNote);
 saveButton.addEventListener('click', saveNote);
