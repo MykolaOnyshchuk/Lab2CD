@@ -160,10 +160,15 @@ const hashManage = () => {
         currentLI = NULL;
     }
     else {
+
+        if (currentLI !== null) {
+            currentLI.style.backgroundColor = "mediumpurple";
+        }
         for (let i = 0; i < arrOfObj.length; i++) {
             if (location.hash === '#' + arrOfObj[i].id) {
                 currentid = "li" + location.hash.slice(1);
                 currentLI = document.getElementById(currentid);
+                currentLI.style.backgroundColor = "mediumblue";
                 let ind = idSearch(currentid);
                 title.value = arrOfObj[ind].title;
                 noteField.value = arrOfObj[ind].text;
@@ -176,8 +181,12 @@ const hashManage = () => {
 function current(e){
     // e.target ссылается на кликнутый <li> элемент
     // Он отличается от e.currentTarget который будет ссылаться на родительский <ul> в этом контексте
+    if (currentLI != null) {
+        currentLI.style.backgroundColor = "mediumpurple";
+    }
     currentid = "li" + e.target.id.slice(2);
     currentLI = document.getElementById(currentid);
+    currentLI.style.backgroundColor = "mediumblue";
     let ind = idSearch(currentid);
     title.value = arrOfObj[ind].title;
     noteField.value = arrOfObj[ind].text;
