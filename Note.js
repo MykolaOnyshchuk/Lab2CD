@@ -46,7 +46,7 @@ const pageLoad = () => {
 
 const setDate = () => {
     let now = new Date();
-    let date = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + "   " + now.getDay() + "." + now.getMonth() + "." + now.getFullYear();
+    let date = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + "   " + now.getDate() + "." + (now.getMonth()+1) + "." + now.getFullYear();
     return date;
 }
 
