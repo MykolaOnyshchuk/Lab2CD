@@ -84,6 +84,7 @@ function createNewNote() {
     title.value = "";
     noteField.value = "";
     localStorage.setItem('NotePlus', JSON.stringify(arrOfObj));
+}
 
 const saveNote = () => {
     let ind = idSearch(currentid);
