@@ -116,7 +116,7 @@ const saveNote = () => {
 
 const deleteNote = () => {
     let ind = idSearch(currentid);
-    arrOfObj.splice(ind, ind + 1);
+    arrOfObj.splice(ind, 1);
     UL.removeChild(currentLI);
     localStorage.setItem('NotePlus', JSON.stringify(arrOfObj));
     title.value = "";
