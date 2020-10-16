@@ -203,7 +203,6 @@ let highlightID;
 const title = document.getElementById('title');
 const noteField = document.getElementById('noteField');
 const createButton = document.getElementById("createBtn");
-const saveButton = document.getElementById("saveBtn");
 const deleteButton = document.getElementById("deleteBtn")
 const UL = document.getElementById("ulBar");
 document.addEventListener("DOMContentLoaded", function() {
@@ -213,6 +212,11 @@ UL.addEventListener('click', current);
 UL.addEventListener('mouseover', mouseHighlight);
 UL.addEventListener('mouseout', mouseUnhighlight);
 createButton.addEventListener("click", createNewNote);
-saveButton.addEventListener('click', saveNote);
 deleteButton.addEventListener('click', deleteNote)
 window.addEventListener('hashchange', hashManage);
+title.oninput = function () {
+    saveNote();
+}
+noteField.oninput = function () {
+    saveNote();
+}
