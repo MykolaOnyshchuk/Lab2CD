@@ -203,7 +203,7 @@ let highlightID;
 const title = document.getElementById('title');
 const noteField = document.getElementById('noteField');
 const createButton = document.getElementById("createBtn");
-const deleteButton = document.getElementById("deleteBtn")
+const deleteButton = document.getElementById("deleteBtn");
 const UL = document.getElementById("ulBar");
 document.addEventListener("DOMContentLoaded", function() {
     pageLoad();
