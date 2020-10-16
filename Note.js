@@ -139,7 +139,7 @@ const setURL = (elemOfArr) => {
 }
 
 const idGen = (elemOfArr) =>{
-    return Math.floor(Math.random() * 20000) + Math.floor(Math.random() * 20000);
+    return Math.floor(Math.random() * 100000);
 }
 
 const hashManage = () => {
