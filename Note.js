@@ -1,4 +1,4 @@
-function newObj(arrOfObj, id, date, title, text) {
+const newObj = (arrOfObj, id, date, title, text) => {
     arrOfObj[arrOfObj.length] = {
         id: id,
         date: date,
@@ -50,7 +50,7 @@ const setDate = () => {
     return date;
 }
 
-function createNewNote() {
+const createNewNote = () => {
     let idd = idGen();
     let date = setDate();
     newObj(arrOfObj, idd, date, "", "");
@@ -60,7 +60,7 @@ function createNewNote() {
     }
     currentLI = document.createElement("li");
     UL.append(currentLI);
-    currentLI.style.backgroundColor = "#306"
+    currentLI.style.backgroundColor = "#306";
     setURL(arrOfObj[arrOfObj.length - 1]);
     let h6 = document.createElement("h6");
     currentLI.append(h6);
@@ -168,7 +168,7 @@ const hashManage = () => {
     }
 }
 
-function current(e){
+const current = (e) => {
     if (currentLI != null) {
         currentLI.style.backgroundColor = "mediumpurple";
     }
@@ -181,10 +181,25 @@ function current(e){
     location.hash = currentid.slice(2);
 }
 
+const mouseHighlight = (e) => {
+    highlightID = "li" + e.target.id.slice(2);
+    document.getElementById(highlightID).style.backgroundColor = "rebeccapurple";
+}
+
+const mouseUnhighlight = (e) => {
+    if (highlightID === currentid) {
+        document.getElementById(highlightID).style.backgroundColor = "#306";
+    }
+    else {
+        document.getElementById(highlightID).style.backgroundColor = "mediumpurple";
+    }
+}
+
 let arrOfObj = [];
 let idArr = [];
 let currentid;
 let currentLI;
+let highlightID;
 const title = document.getElementById('title');
 const noteField = document.getElementById('noteField');
 const createButton = document.getElementById("createBtn");
@@ -194,7 +209,9 @@ const UL = document.getElementById("ulBar");
 document.addEventListener("DOMContentLoaded", function() {
     pageLoad();
 })
-UL.addEventListener('click', current, false);
+UL.addEventListener('click', current);
+UL.addEventListener('mouseover', mouseHighlight);
+UL.addEventListener('mouseout', mouseUnhighlight);
 createButton.addEventListener("click", createNewNote);
 saveButton.addEventListener('click', saveNote);
 deleteButton.addEventListener('click', deleteNote)

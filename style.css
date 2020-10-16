@@ -14,11 +14,6 @@
     margin: auto;
 }
 
-.sideBar_item:hover{
-    background-color: rebeccapurple;
-    border-radius: 4px;
-}
-
 .form-group{
     float: right;
     width: 68%;
@@ -27,10 +22,6 @@
 .list-group {
     color: snow;
     cursor: pointer;
-}
-
-.liClass:hover{
-    background-color: rebeccapurple;
 }
 
 .liClass{
@@ -53,10 +44,4 @@
     min-height: 635px;
     float: right;
     width: 100%;
-}
-
-#btn1 {
-    float: right;
-    background-color: gray;
-    size: letter;
 }
